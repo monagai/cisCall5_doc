@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>for fusion gene | Ciscall, Clinical Somatic Mutaiton Caller</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../doc/cton.html" />
+    
+    
+    <link rel="prev" href="../doc/muton.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4"
+        data-chapter-title="for fusion gene"
+        data-filepath="doc/fusion.md"
+        data-basepath=".."
+        data-revision="Mon Aug 29 2016 15:36:57 GMT+0900 (JST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="doc/INSTALL.html">
+            
+                
+                    <a href="../doc/INSTALL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        INSTALLATION
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="doc/quick_start.html">
+            
+                
+                    <a href="../doc/quick_start.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        quick start guide
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="doc/muton.html">
+            
+                
+                    <a href="../doc/muton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        for short InDel or SNP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="doc/fusion.html">
+            
+                
+                    <a href="../doc/fusion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        for fusion gene
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="doc/cton.html">
+            
+                
+                    <a href="../doc/cton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        for copy number variation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="doc/variant_call_eg.html">
+            
+                
+                    <a href="../doc/variant_call_eg.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        compare to other mutation caller
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="doc/options.html">
+            
+                
+                    <a href="../doc/options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        detaild features
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Ciscall, Clinical Somatic Mutaiton Caller</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="running-cisfusion">Running cisFusion</h2>
+<p>cisFusion is a fusion gene detecter, which detects the fusion gene by comparing target samples and normal samples.</p>
+<p>Running cisFusion is performed in the same fashion as described for cisMuton and cisCton;</p>
+<pre><code>cd /path_to/work/
+perl /path_to_install_directory/qc_run.pl ${TargetSAMPLE}:${NormalSAMPLE}:${GROUP}:FUSION
+</code></pre><h2 id="cisfusion-output">cisFusion Output</h2>
+<p>Running cisFusion will create following files as output in <code>/path_to/work/Fusion/</code> directory</p>
+<table>
+<thead>
+<tr>
+<th>File name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Call.(<em>NormalSampleName</em>)/</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>(AlnTarget&amp;#x7c;AlnWexome&amp;#x7c;AlnGeneme)_&lt;br&gt;(LmtBthside&amp;#x7c;LmtOneside)_mq(5&amp;#x7c;10)_Single.txt</td>
+<td>Call table with pair ends are counted separately</td>
+</tr>
+<tr>
+<td>(AlnTarget&amp;#x7c;AlnWexome&amp;#x7c;AlnGeneme)_&lt;br&gt;(LmtBthside&amp;#x7c;LmtOneside)_mq(5&amp;#x7c;10)_Paired.txt</td>
+<td>Call table with pair ends counted as 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-format">Output Format</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pair</td>
+<td></td>
+</tr>
+<tr>
+<td>Call</td>
+<td></td>
+</tr>
+<tr>
+<td>Nrmcnt_total</td>
+<td>Norm count total</td>
+</tr>
+<tr>
+<td>Nrmcnt_2map</td>
+<td></td>
+</tr>
+<tr>
+<td>Nrmcnt_2map+paired</td>
+<td></td>
+</tr>
+<tr>
+<td>2map_count</td>
+<td></td>
+</tr>
+<tr>
+<td>2map&amp;VF_count</td>
+<td></td>
+</tr>
+<tr>
+<td>VF_count</td>
+<td></td>
+</tr>
+<tr>
+<td>Paired_count</td>
+<td></td>
+</tr>
+<tr>
+<td>OnlyVF_Prop(OnlyVF/Total)</td>
+<td></td>
+</tr>
+<tr>
+<td>OnlyVF_Prop(OnlyVF/2map)</td>
+<td></td>
+</tr>
+<tr>
+<td>OnlyVF_Prop(OnlyVF/(2map+paired))</td>
+<td></td>
+</tr>
+<tr>
+<td>MapCount_Pval</td>
+<td></td>
+</tr>
+<tr>
+<td>GeneDepth:BiasG1G2</td>
+<td></td>
+</tr>
+<tr>
+<td>GeneDepth:TotalG1G2</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1:Breakpoint</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1:Nrmcnt</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1:Count</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1:Count_SN</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene1:GeneDepth</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2:Breakpoint</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2:Nrmcnt</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2:Count</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2:Count_SN</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene2:GeneDepth</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../doc/muton.html" class="navigation navigation-prev " aria-label="Previous page: for short InDel or SNP"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../doc/cton.html" class="navigation navigation-next " aria-label="Next page: for copy number variation"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>for short InDel or SNP | Ciscall, Clinical Somatic Mutaiton Caller</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../doc/fusion.html" />
+    
+    
+    <link rel="prev" href="../doc/quick_start.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="for short InDel or SNP"
+        data-filepath="doc/muton.md"
+        data-basepath=".."
+        data-revision="Mon Aug 29 2016 15:36:57 GMT+0900 (JST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="doc/INSTALL.html">
+            
+                
+                    <a href="../doc/INSTALL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        INSTALLATION
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="doc/quick_start.html">
+            
+                
+                    <a href="../doc/quick_start.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        quick start guide
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="doc/muton.html">
+            
+                
+                    <a href="../doc/muton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        for short InDel or SNP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="doc/fusion.html">
+            
+                
+                    <a href="../doc/fusion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        for fusion gene
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="doc/cton.html">
+            
+                
+                    <a href="../doc/cton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        for copy number variation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="doc/variant_call_eg.html">
+            
+                
+                    <a href="../doc/variant_call_eg.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        compare to other mutation caller
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="doc/options.html">
+            
+                
+                    <a href="../doc/options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        detaild features
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Ciscall, Clinical Somatic Mutaiton Caller</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="running-cismuton">Running cisMuton</h2>
+<p>cisMuton is a point mutation caller, which detects the SNVs by comparing target samples and normal samples.</p>
+<p>To run the cisMuton, execute the following commands;</p>
+<pre><code>cd /path_to/work/
+perl /path_to_install_directory/qc_run.pl ${TargetSAMPLE}:${NormalSAMPLE}:${GROUP}:MUTON
+</code></pre><p>if several normal samples are given, cisMuton selects the most similar sample to the target sample, considering the correlating value;</p>
+<p><strong>EXAMPLE</strong>
+If you have <code>target1.group3.fastq</code> <code>normal1.group3.fastq</code> <code>normal2.group3.fastq</code> <code>group3.fa</code> <code>group3.target.bed</code> in working directory, execute following command to run the cisMuton with most simlar normal sample;</p>
+<pre><code>perl /path_to_install_directory/qc_run.pl target1:normal1:normal2:group3:MUTON, TARGET
+</code></pre><h2 id="cismuton-output">cisMuton Output</h2>
+<p>Running cisMuton will create following files as output in <code>/path_to/work/Muton/</code> directory</p>
+<table>
+<thead>
+<tr>
+<th>File name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Call.(<em>NormalSampleName</em>)/</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>info.filter/</strong></td>
+<td>Call table with filters</td>
+</tr>
+<tr>
+<td>call.case[0-9].txt</td>
+<td>Call table</td>
+</tr>
+<tr>
+<td>call.case[0-9].txt.vcf</td>
+<td>Call table(vcf format)</td>
+</tr>
+<tr>
+<td><strong>CallQC.Filter.Fisher/</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>M01.PValue.hist.pdf</td>
+<td>Distribution of chisq.test p value</td>
+</tr>
+<tr>
+<td>M01.PValue.qq.pdf</td>
+<td>qq plot of chisq.test p value</td>
+</tr>
+<tr>
+<td>M01.VFreqRation.hist.pdf</td>
+<td>Distribution of proportion ratio</td>
+</tr>
+<tr>
+<td><strong>CallQC.Filter.StrandBias/</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Proportion.depth300.fg.pdf</td>
+<td>Distribution of strand bias over depth 300</td>
+</tr>
+<tr>
+<td><strong>CallQC.VFreq.M03<em>wLeesVAF.(_NormalSampleName</em>)/</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>M03A.Variant-Propotion.snv.1.case1.pdf</td>
+<td>Distribution of SNV mutation rate</td>
+</tr>
+<tr>
+<td>M03A.Variant-Propotion.indel.1.case1.pdf</td>
+<td>Distribution of INDEL mutation rate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-format">Output Format</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chr</td>
+<td>Chromosome Name</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Start position (1-based)</td>
+</tr>
+<tr>
+<td>End</td>
+<td>End position (1-based)</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>Reference nucleotide/sequence</td>
+</tr>
+<tr>
+<td>Variant</td>
+<td>Variant nucleotide</td>
+</tr>
+<tr>
+<td>FPscore</td>
+<td></td>
+</tr>
+<tr>
+<td>VFreqRatio</td>
+<td></td>
+</tr>
+<tr>
+<td>VariantFreq</td>
+<td>Variant allel frequency</td>
+</tr>
+<tr>
+<td>DelPivotPosInsertion</td>
+<td></td>
+</tr>
+<tr>
+<td>Depth:FG</td>
+<td>Depth of Foreground</td>
+</tr>
+<tr>
+<td>Depth:BG</td>
+<td>Depth of Background</td>
+</tr>
+<tr>
+<td>&amp;#x7c;C&amp;#x7c;G&amp;#x7c;T&amp;#x7c;D&amp;#x7c;I:FG</td>
+<td>Nucleotide counts for this position in the foreground file</td>
+</tr>
+<tr>
+<td>A&amp;#x7c;C&amp;#x7c;G&amp;#x7c;T&amp;#x7c;D&amp;#x7c;I:BG</td>
+<td>Nucleotide counts for this position in the background file</td>
+</tr>
+<tr>
+<td>Homopolymer:Length</td>
+<td></td>
+</tr>
+<tr>
+<td>CopyNumber:Ratio</td>
+<td>Copy number ration defined as counts_tumor/count_normal</td>
+</tr>
+<tr>
+<td>Variant SNP:MajorAlleleFreq</td>
+<td></td>
+</tr>
+<tr>
+<td>DBSnp</td>
+<td>Variant info in DBsnp</td>
+</tr>
+<tr>
+<td>JPSnp</td>
+<td>Variant info in JPsnp</td>
+</tr>
+<tr>
+<td>RepeatMasker</td>
+<td></td>
+</tr>
+<tr>
+<td>SimpleRepeat</td>
+<td></td>
+</tr>
+<tr>
+<td>Regions syn_nonsyn</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene</td>
+<td></td>
+</tr>
+<tr>
+<td>RNA</td>
+<td></td>
+</tr>
+<tr>
+<td>ljb_pp2 ljb2_ma ljb2_fathmm</td>
+<td></td>
+</tr>
+<tr>
+<td>Score_of_segmental_duplications</td>
+<td></td>
+</tr>
+<tr>
+<td>1stRNA 1stRNA:ChangeRNA</td>
+<td></td>
+</tr>
+<tr>
+<td>1stRNA:ChangeProtein</td>
+<td></td>
+</tr>
+<tr>
+<td>AAChange.refGene</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../doc/quick_start.html" class="navigation navigation-prev " aria-label="Previous page: quick start guide"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../doc/fusion.html" class="navigation navigation-next " aria-label="Next page: for fusion gene"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

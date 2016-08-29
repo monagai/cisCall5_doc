@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>quick start guide | Ciscall, Clinical Somatic Mutaiton Caller</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../doc/muton.html" />
+    
+    
+    <link rel="prev" href="../doc/INSTALL.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="quick start guide"
+        data-filepath="doc/quick_start.md"
+        data-basepath=".."
+        data-revision="Mon Aug 29 2016 15:36:57 GMT+0900 (JST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="doc/INSTALL.html">
+            
+                
+                    <a href="../doc/INSTALL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        INSTALLATION
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="doc/quick_start.html">
+            
+                
+                    <a href="../doc/quick_start.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        quick start guide
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="doc/muton.html">
+            
+                
+                    <a href="../doc/muton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        for short InDel or SNP
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="doc/fusion.html">
+            
+                
+                    <a href="../doc/fusion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        for fusion gene
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="doc/cton.html">
+            
+                
+                    <a href="../doc/cton.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        for copy number variation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="doc/variant_call_eg.html">
+            
+                
+                    <a href="../doc/variant_call_eg.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        compare to other mutation caller
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="doc/options.html">
+            
+                
+                    <a href="../doc/options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        detaild features
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Ciscall, Clinical Somatic Mutaiton Caller</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="overview">Overview</h1>
+<p>cisCall has three modules: cisMuton, cisCton, and cisFusion.
+cisMuton calls point mutations (Single nucleotide variants), cisCton calls copy number amplifications (CNAs), and cisFusion detects fusion genes.</p>
+<p>right now, it is best to use Cton of CisCall version7 and version5 for Muton and Fusion
+Since Muton and Fusion of Ciscall7 is under development, this doc will be updated later.</p>
+<p>since version5 is included in <a href="https://github.com/NCCJapan/CisCall7" target="_blank">Ciscall7 repository</a>, you can download from there at once.</p>
+<h1 id="running-muton-and-fusion">running Muton and Fusion</h1>
+<h2 id="before-running">Before Running</h2>
+<h3 id="i-prepare-working-directory-and-samples"><a name="prepare"> I. Prepare working directory and samples</a></h3>
+<ol>
+<li><p>Create a working directory. <strong>All of the data prepared in this chapter should be located under the working directory</strong>.</p>
+<pre><code> mkdir /path_to/work
+ cd /path_to/work
+</code></pre></li>
+<li><p>Prepare sample files</p>
+<ul>
+<li>cisCall will process the data labeled <strong>Sample</strong> in a group labeled <strong>Group</strong>.</li>
+<li>cisCall is compatible with both <code>.fastq</code> and <code>.bam</code> as input.</li>
+<li><p>If you want to run with multiple <code>.fastq</code> files (for biological/technical replicates), concatenate files together as follows:</p>
+<p>In the case of single-end</p>
+<pre><code>cat sample1-1.fastq ... sample1-4.fastq &amp;gt; /path_to/work/${SampleName}.${GroupName}.fastq
+</code></pre><p>In the case of pair-end</p>
+<pre><code>cat sample1-1r1.fastq ... sample1-4r1.fastq &amp;gt; /path_to/work/${SampleName}.${GroupName}.fastq.R1
+cat sample1-1r2.fastq ... sample1-4r2.fastq &amp;gt; /path_to/work/${SampleName}.${GroupName}.fastq.R2
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id="ii-prepare-prerequisite-files">II. Prepare prerequisite files</h3>
+<p>cisCall requires some prerequisite files for processing. Following table shows the list of prerequisite files and sources to prepare the files for analysis of hg19 samples for instance;</p>
+<p><strong>Table. Prerequisite files</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">File type</th>
+<th style="text-align:left">Source</th>
+<th style="text-align:left">Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">${GROUP}.DBexome</td>
+<td style="text-align:left"><a href="http://www.genome.med.kyoto-u.ac.jp/SnpDB/HGVD1208-V1_41-dbSNP137.tar.gz" target="_blank">http://www.genome.med.kyoto-u.ac.jp/SnpDB/HGVD1208-V1_41-dbSNP137.tar.gz</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.bedgraph</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeDukeMapabilityUniqueness20bp.bigWig" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeDukeMapabilityUniqueness20bp.bigWig</a></td>
+<td style="text-align:left">converted from .bigWig</td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.fasta</td>
+<td style="text-align:left">hg19 genome</td>
+<td style="text-align:left">concatenate into single fasta</td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.fusion.gene.txt</td>
+<td style="text-align:left">data set of fusion gene, should be self-prepared</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.geneName.txt</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/geneName.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/geneName.txt.gz</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.genefam_list.txt</td>
+<td style="text-align:left">ftp://ftp.ebi.ac.uk/pub/databases/genenames/genefam_list.txt.gz</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.genomicSuperDups.txt</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/genomicSuperDups.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/genomicSuperDups.txt.gz</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.hs37d5cs.fa</td>
+<td style="text-align:left"><a href="http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5cs.fa.gz" target="_blank">http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5cs.fa.gz</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.refGene.txt</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/refGene.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/refGene.txt.gz</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.rmsk</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/rmsk.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/rmsk.txt.gz</a></td>
+<td style="text-align:left">remove file extension <code>.txt</code></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.simpleRepeat</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/simpleRepeat.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/simpleRepeat.txt.gz</a></td>
+<td style="text-align:left">remove file extension <code>.txt</code></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.snp.dbsnp</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/snp138.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/snp138.txt.gz</a></td>
+<td style="text-align:left">edit file extension <code>.txt</code> to <code>.snp.dbsnp</code></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.target.bed</td>
+<td style="text-align:left">bed file for capture region, depend on sample kit used</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">${GROUP}.gene.bed</td>
+<td style="text-align:left">bed file for capture region annotation</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">dgvMerged.txt.gz</td>
+<td style="text-align:left"><a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/dgvMerged.txt.gz" target="_blank">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/dgvMerged.txt.gz</a></td>
+<td style="text-align:left">???</td>
+</tr>
+<tr>
+<td style="text-align:left">bin/</td>
+<td style="text-align:left">(symbolic link to cisCall/bin/)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>For <strong>cisFusion</strong>, you also require  to prepare a <code>fusion.bed</code> file, which indicate the region targeted for fusion mutation. It is a tab-deliminated file consist of four column, [Chromosome], [start position(1 base)], [end position(1 base)], and [gene name.GeneID].
+e.g. <code>chr1    11810133    11810828    AGTRAP.57085</code></li>
+<li>Some of the files required to be preprocessed before it is used by cisCall. Please read the INSTALL for details.</li>
+</ul>
+<h2 id="run">Run</h2>
+<h3 id="1-set-running-parameters">1. Set running parameters</h3>
+<p>Execute the following commands in the work directory;</p>
+<pre><code>perl /path_to_install_directory/Ciscall5/bin/qc_run.pl ::${GroupName}:PARAM
+</code></pre><p>Now, the parameter setup window should be appeared. In this window;</p>
+<ol>
+<li>Choose parameters based on the sequencing platform and sample type</li>
+<li>When the edit parameter window appears, Select <strong>2: Save</strong></li>
+<li>When <strong>Save param-ID</strong> appears, Select <strong>0: \&lt;To be automatically named&gt;</strong></li>
+<li>When the edit parameter window reappears, Select <strong>1: Quit</strong> or further edit parameters if necessary</li>
+</ol>
+<h3 id="2-run-ciscall5">2. Run cisCall5</h3>
+<p>Execute the following commands will run mutation calls for SNVs (Muton) and fusion gene detection (Fusion);</p>
+<pre><code>perl /path_to_install_directory/Ciscall5/bin/qc_run.pl ${TargetSampleName}:${NormalSampleName}:${GroupName}:MUTON, FUSION
+</code></pre><p>e.g. if your target_sample.fastq file named <strong>target.EXAMPLE.fastq</strong> and normal_sample.fastq file named <strong>normal.EXAMPLE.fastq</strong>, then the command should be as follows;</p>
+<pre><code>perl /path_to_install_directory/bin/qc_run.pl target:normal:EXAMPLE:MUTON, CTON, FUSION
+</code></pre><h1 id="running-cton">Running Cton</h1>
+<p><a href="#prepare">Prepare data as same as Muton and Fusion</a> in e.g.<code>path/to/data/</code>. additionary, download following data to same directory.</p>
+<p>*</p>
+<p>and run following command.</p>
+<pre><code>python /path_to_install_directory/src/ciscall.py -a &apos;CTON&apos; \
+    -d path/to/data \
+    -m &quot;path/to/samtools&quot; \
+    -b &quot;path/to/bigWigtobedGraph&quot; \
+    &quot;/path/to/tumor_sample.bam&quot; \ # it will be &quot;output/${TargetSampleName}.${GroupName}.MUTON.TARGET/common.fastq.aln.bam&quot; if you have already run Muton before
+    &quot;/path/to/normal_sample.bam&quot; # it will be &quot;output/${NormalSampleName}.${GroupName}.MUTON.TARGET/common.fastq.aln.bam&quot; if you have already run Muton before
+    -p &quot;{GroupName}&quot;
+</code></pre><ul>
+<li>It would takes time to complete process for the first run because cisCall will create index file for some reference files.</li>
+<li>cisCall is able to run SNVs, CNAs calls and fusion genes detection independently, also with several optional process. Please read cisCall Options for more detail.</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../doc/INSTALL.html" class="navigation navigation-prev " aria-label="Previous page: INSTALLATION"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../doc/muton.html" class="navigation navigation-next " aria-label="Next page: for short InDel or SNP"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
